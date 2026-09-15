@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gunter Chen | Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======= NAV ======= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Gunter Chen</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-title">Gunter PoAn</h1>
+      <p class="hero-typing" id="typewriter"></p>
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+    </div>
+    <div class="scroll-down" id="scroll-down">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            My name is PoAn Chen (Gunter).
+            I am currently a master's student in <strong>Information Management at NYCU</strong>,
+            where I earned bachelor's degree in Information Management &amp; Finance.
+          </p>
+          <p>
+            Specialized in <strong>backend development</strong>, <strong>API design</strong>, and <strong>parallel computing</strong>, while also exploring <strong>AI applications</strong> and <strong>frontend technologies</strong>.
+          </p>
+          <p>
+            I am passionate about transforming complex technical challenges into practical solutions, consistently pushing myself across diverse domains.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2025/09 - Present</span>
+            <h4>National Yang Ming Chiao Tung University (NYCU)</h4>
+            <p>Master of Information Management</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">2021/09 - 2025/06</span>
+            <h4>National Yang Ming Chiao Tung University (NYCU)</h4>
+            <p>Bachelor of Information Management and Finance</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= EXPERIENCE ======= -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-timeline-track">
+        <div class="exp-timeline-arrow"></div>
+        <div class="exp-timeline-dots">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <span class="exp-date">2024/07 - 2025/01</span>
+          <h3>Zyxel</h3>
+          <p class="exp-role">Software Develop & Testing Internship</p>
+          <p class="exp-desc">
+            - Managed and optimized internal system by routine upgrades and troubleshooting.
+            <br>
+            - Built scalable internal tools, optimizing efficiency and accelerate software lifecycles.
+          </p>
+        </div>
+        <div class="exp-card">
+          <span class="exp-date">2026/07 - Present</span>
+          <h3>WNC</h3>
+          <p class="exp-role">Software Engineer Internship</p>
+          <p class="exp-desc">
+            - Built APP integrating GitLab and Jira, automated CI/CD workflows.
+            <br>
+            - Reduced 75% manual effort, shipped 6+ features, fixed 10+ issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= RESEARCH ======= -->
+  <section class="section research" id="research">
+    <div class="container">
+      <h2 class="section-title">Research</h2>
+      <div class="research-grid">
+
+        <!-- Research 1 -->
+        <article class="project-card" data-index="0">
+          <div class="project-img">
+            <img src="assets/cuda_kernel.svg">
+          </div>
+          <div class="project-body">
+            <h3>GPU Parallelization of Threshold Secret Sharing with Latin Cubes</h3>
+            <div class="project-desc">
+              <p>GPU-parallel (k,n) TSS built on Latin Cubes. Five CUDA kernels with coalesced memory access eliminate the offline table-generation bottleneck and achieve 40×–150× speedups over optimized CPU baselines.</p>
+            </div>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">CUDA</span>
+              <span class="tag">Cryptography</span>
+              <span class="tag">Galois Field</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Research 2 -->
+        <article class="project-card" data-index="1">
+          <div class="project-img">
+            <img src="./assets/cdr.png">
+          </div>
+          <div class="project-body">
+            <h3>Degrading Trustworthiness in CDR via Popularity Bias Poisoning</h3>
+            <div class="project-desc">
+              <p>A popularity bias poisoning attack against CDR, degrading unpopular item predictions while maintaining overall performance using only public user-item interactions.</p>
+            </div>
+            <div class="project-tags">
+              <span class="tag">IEEE</span>
+              <span class="tag">Python</span>
+              <span class="tag">Poisoning Attack</span>
+              <span class="tag">CDRS</span>
+              <span class="tag">Adversarial ML</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PROJECTS ======= -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Card 1: Release Platform -->
+        <article class="project-card" data-index="2">
+          <div class="project-img">
+            <img src="assets/release-platform.svg">
+          </div>
+          <div class="project-body">
+            <h3>Release Platform</h3>
+            <p class="project-desc">WNC intern project: a release platform integrating GitLab and Jira APIs, automating CI/CD workflows and reducing 75% of manual operations.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">GitLab API</span>
+              <span class="tag">Jira API</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: SAML SSO -->
+        <article class="project-card" data-index="3">
+          <div class="project-img">
+            <img src="assets/saml-sso.svg">
+          </div>
+          <div class="project-body">
+            <h3>SAML SSO System</h3>
+            <p class="project-desc">Enterprise-grade single sign-on system. Python Django and FastAPI for backend, Vue.js for frontend, fully implementing SAML authentication flow.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">SAML</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Multispeaker Transcription -->
+        <article class="project-card" data-index="4">
+          <div class="project-img">
+            <img src="assets/multispeaker.svg">
+          </div>
+          <div class="project-body">
+            <h3>Multispeaker Transcription</h3>
+            <p class="project-desc">Meichu Hackathon Google Group 3rd. Reinforcement Learning-based multispeaker identification, improving accessbility.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">RL</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Voice Recognition</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: CPP 3D Engine -->
+        <article class="project-card" data-index="5">
+          <div class="project-img">
+            <img src="assets/cpp-3d-engine.svg" alt="CPP 3D Engine">
+          </div>
+          <div class="project-body">
+            <h3>CPP 3D Engine</h3>
+            <p class="project-desc">A 3D engine built with C++ and object-oriented design, covering linear algebra and hitbox collision detection.</p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Linear Algebra</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Chat Bot -->
+        <article class="project-card" data-index="6">
+          <div class="project-img">
+            <img src="assets/discord-bot.svg" alt="Discord/MS Teams Bot">
+          </div>
+          <div class="project-body">
+            <h3>Discord/MS Teams Bot</h3>
+            <p class="project-desc">LLM-powered task management bot with task queries, priority and intelligent summarization.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Discord</span>
+              <span class="tag">MS Teams</span>
+              <span class="tag">LLM</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-content">
+        <p>0900-159-560<br>henry910921@gmail.com</p>
+        <div class="contact-links">
+          <a href="https://github.com/GunterPoan" target="_blank" rel="noopener" class="contact-icon" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:henry910921@gmail.com" class="contact-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="tel:0900-159-560" class="contact-icon" aria-label="Phone">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M6.62 10.79a15.091 15.091 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </a>
+          <a href="./CV.pdf" target="_blank" class="contact-icon" aria-label="CV">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-2 8c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm4 8H8v-1c0-1.33 2.67-2 4-2s4 .67 4 2v1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <p>Gunter Chen &copy; 2026. All rights reserved.</p>
+  </footer>
+
+  <!-- ======= BACK TO TOP ======= -->
+  <button class="back-to-top" id="back-to-top" aria-label="回到頂部">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- ======= MODAL ======= -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="關閉">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

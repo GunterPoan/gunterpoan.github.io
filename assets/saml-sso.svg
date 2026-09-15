@@ -1,0 +1,91 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow filters -->
+    <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Arrow marker -->
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#f1f5f9"/>
+    </marker>
+  </defs>
+
+  <!-- Transparent background -->
+  <rect width="800" height="400" fill="none"/>
+
+  <!-- ===================== Backend Detail Panel (Top) ===================== -->
+  <!-- Dashed connector line from Backend node to Detail panel -->
+  <line x1="400" y1="233" x2="400" y2="198" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6,5" opacity="0.7"/>
+  <!-- Magnifier icon at connection -->
+  <g transform="translate(400, 188) scale(0.65)">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#38bdf8" stroke-width="3"/>
+    <line x1="10" y1="10" x2="20" y2="20" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Detail frame -->
+  <rect x="200" y="52" width="400" height="138" rx="14" 
+        fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.9"/>
+
+  <!-- Detail title -->
+  <text x="400" y="78" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Segoe UI, sans-serif" font-weight="600" letter-spacing="0.04em">BACKEND DETAIL</text>
+
+  <!-- Django sub-module -->
+  <rect x="240" y="96" width="120" height="62" rx="10" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="300" y="126" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Segoe UI, sans-serif" font-weight="700">Django</text>
+  <text x="300" y="142" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Web / App</text>
+
+  <!-- Python SAML sub-module -->
+  <rect x="440" y="96" width="120" height="62" rx="10" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="500" y="126" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Segoe UI, sans-serif" font-weight="700">Python</text>
+  <text x="500" y="142" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">SAML Lib</text>
+
+  <!-- Internal arrows (Django ↔ Python) -->
+  <line x1="365" y1="118" x2="435" y2="118" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.9"/>
+  <line x1="435" y1="136" x2="365" y2="136" stroke="#f1f5f9" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.9"/>
+  <text x="400" y="112" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="Segoe UI, sans-serif">SAML Request</text>
+  <text x="400" y="150" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="Segoe UI, sans-serif">SAML Response</text>
+
+
+  <!-- ===================== Main Flow (Bottom) ===================== -->
+
+  <!-- Frontend -->
+  <circle cx="120" cy="310" r="48" fill="rgba(52,211,153,0.15)" stroke="#34d399" stroke-width="2.5" filter="url(#glow-green)"/>
+  <circle cx="120" cy="310" r="40" fill="rgba(52,211,153,0.25)"/>
+  <text x="120" y="306" text-anchor="middle" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">Frontend</text>
+  <text x="120" y="322" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Vue.js</text>
+
+  <!-- Backend (highlighted with extra glow) -->
+  <circle cx="400" cy="310" r="56" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="3" filter="url(#glow-blue)"/>
+  <circle cx="400" cy="310" r="48" fill="rgba(56,189,248,0.22)"/>
+  <text x="400" y="306" text-anchor="middle" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">Backend</text>
+  <text x="400" y="322" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Django</text>
+
+  <!-- IDP -->
+  <circle cx="680" cy="310" r="48" fill="rgba(248,113,113,0.15)" stroke="#f87171" stroke-width="2.5" filter="url(#glow-red)"/>
+  <circle cx="680" cy="310" r="40" fill="rgba(248,113,113,0.22)"/>
+  <text x="680" y="306" text-anchor="middle" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">IDP</text>
+  <text x="680" y="322" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Azure ADFS</text>
+
+
+  <!-- Arrows: Frontend ↔ Backend -->
+  <line x1="172" y1="288" x2="342" y2="288" stroke="#f1f5f9" stroke-width="1.8" marker-end="url(#arrow)" opacity="0.85"/>
+  <line x1="342" y1="332" x2="172" y2="332" stroke="#f1f5f9" stroke-width="1.8" marker-end="url(#arrow)" opacity="0.85"/>
+  <text x="257" y="282" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">API Request</text>
+  <text x="257" y="348" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Response</text>
+
+  <!-- Arrows: Backend ↔ IDP -->
+  <line x1="458" y1="288" x2="628" y2="288" stroke="#f1f5f9" stroke-width="1.8" marker-end="url(#arrow)" opacity="0.85"/>
+  <line x1="628" y1="332" x2="458" y2="332" stroke="#f1f5f9" stroke-width="1.8" marker-end="url(#arrow)" opacity="0.85"/>
+  <text x="543" y="282" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">SAML Request</text>
+  <text x="543" y="348" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Segoe UI, sans-serif">Token / Response</text>
+
+</svg>

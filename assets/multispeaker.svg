@@ -1,0 +1,73 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-mic" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="none"/>
+
+  <g transform="translate(80, 20)">
+
+  <!-- subtle vertical timeline -->
+  <line x1="48" y1="48" x2="48" y2="330" stroke="rgba(148,163,184,0.25)" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- ===== Speaker A (1st) ===== -->
+  <circle cx="48" cy="48" r="20" fill="#f97316"/>
+  <g transform="translate(48,48) scale(0.45)">
+    <circle cx="0" cy="-7" r="8" fill="#fff" opacity="0.95"/>
+    <path d="M-14 10 Q-14 -3 0 -3 Q14 -3 14 10 V12 H-14 Z" fill="#fff" opacity="0.95"/>
+  </g>
+  <rect x="78" y="24" width="240" height="48" rx="14" fill="#334155"/>
+  <text x="96" y="54" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="500">Speaker A is talking.</text>
+
+  <!-- ===== Speaker A (2nd) ===== -->
+  <circle cx="48" cy="110" r="20" fill="#f97316"/>
+  <g transform="translate(48,110) scale(0.45)">
+    <circle cx="0" cy="-7" r="8" fill="#fff" opacity="0.95"/>
+    <path d="M-14 10 Q-14 -3 0 -3 Q14 -3 14 10 V12 H-14 Z" fill="#fff" opacity="0.95"/>
+  </g>
+  <rect x="78" y="86" width="220" height="48" rx="14" fill="#334155"/>
+  <text x="96" y="116" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="500">Still speaker A.</text>
+
+  <!-- ===== Speaker B ===== -->
+  <circle cx="48" cy="172" r="20" fill="#38bdf8"/>
+  <g transform="translate(48,172) scale(0.45)">
+    <circle cx="0" cy="-7" r="8" fill="#fff" opacity="0.95"/>
+    <path d="M-14 10 Q-14 -3 0 -3 Q14 -3 14 10 V12 H-14 Z" fill="#fff" opacity="0.95"/>
+  </g>
+  <rect x="78" y="148" width="250" height="48" rx="14" fill="#334155"/>
+  <text x="96" y="178" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="500">Now speaker B responds.</text>
+
+  <!-- ===== Speaker C ===== -->
+  <circle cx="48" cy="234" r="20" fill="#f87171"/>
+  <g transform="translate(48,234) scale(0.45)">
+    <circle cx="0" cy="-7" r="8" fill="#fff" opacity="0.95"/>
+    <path d="M-14 10 Q-14 -3 0 -3 Q14 -3 14 10 V12 H-14 Z" fill="#fff" opacity="0.95"/>
+  </g>
+  <rect x="78" y="210" width="200" height="48" rx="14" fill="#334155"/>
+  <text x="96" y="240" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="500">Speaker C joins.</text>
+
+  <!-- ===== Speaker A (5th, back) ===== -->
+  <circle cx="48" cy="296" r="20" fill="#f97316"/>
+  <g transform="translate(48,296) scale(0.45)">
+    <circle cx="0" cy="-7" r="8" fill="#fff" opacity="0.95"/>
+    <path d="M-14 10 Q-14 -3 0 -3 Q14 -3 14 10 V12 H-14 Z" fill="#fff" opacity="0.95"/>
+  </g>
+  <rect x="78" y="272" width="230" height="48" rx="14" fill="#334155"/>
+  <text x="96" y="302" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="500">Back to speaker A.</text>
+
+  <!-- ===== Microphone (Right middle) ===== -->
+  <g transform="translate(460, 200)">
+    <circle cx="0" cy="0" r="36" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="2" filter="url(#glow-mic)"/>
+    <!-- mic icon -->
+    <rect x="-6" y="-11" width="12" height="16" rx="6" fill="none" stroke="#f1f5f9" stroke-width="2.2"/>
+    <path d="M-11 0 Q-11 10 0 10 Q11 10 11 0" fill="none" stroke="#f1f5f9" stroke-width="2.2"/>
+    <line x1="0" y1="10" x2="0" y2="17" stroke="#f1f5f9" stroke-width="2.2"/>
+    <line x1="-7" y1="17" x2="7" y2="17" stroke="#f1f5f9" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  </g>
+
+</svg>
