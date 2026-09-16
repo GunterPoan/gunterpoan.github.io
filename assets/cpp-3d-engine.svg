@@ -1,73 +1,102 @@
 <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <filter id="glow-hitbox" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
   <rect width="800" height="400" fill="none"/>
 
-  <!-- ===================== PLANE GRID (XY) ===================== -->
-  <!-- Horizontal grid lines -->
-  <g opacity="0.2">
-    <line x1="80" y1="280" x2="720" y2="280" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="80" y1="300" x2="720" y2="300" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="80" y1="320" x2="720" y2="320" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="80" y1="340" x2="720" y2="340" stroke="#38bdf8" stroke-width="1"/>
+  <!-- ====== Cabinet Projection Helpers ====== -->
+  <!-- 3D (x,y,z) to 2D formula:
+       x2d = x - y * 0.6
+       y2d = base_y - z + y * 0.4
+       base_y for z=0 plane = 320
+  -->
+
+  <!-- ===================== XY PLANE (floor grid) ===================== -->
+  <g opacity="0.15">
+    <!-- parallel lines along X -->
+    <line x1="150" y1="320" x2="710" y2="320" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="120" y1="300" x2="680" y2="300" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="90"  y1="280" x2="650" y2="280" stroke="#38bdf8" stroke-width="1"/>
+    <!-- receding lines along Y (down-left) -->
+    <line x1="200" y1="240" x2="140" y2="320" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="380" y1="240" x2="320" y2="320" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="560" y1="240" x2="500" y2="320" stroke="#38bdf8" stroke-width="1"/>
   </g>
-  <!-- Vertical grid lines -->
-  <g opacity="0.2">
-    <line x1="150" y1="250" x2="150" y2="380" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="350" y1="250" x2="350" y2="380" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="550" y1="250" x2="550" y2="380" stroke="#38bdf8" stroke-width="1"/>
+
+
+  <!-- ===================== CUBE (left) ===================== -->
+  <!-- Cube center x≈300, z floats above the floor -->
+  <!-- 3D coordinates: x∈[250,330], y∈[0,50], z∈[120,200] -->
+
+  <!-- projection shadow on XY plane (z=0) -->
+  <polygon points="250,320 330,320 300,340 220,340" fill="rgba(249,115,22,0.08)" stroke="#f97316" stroke-width="1.8" stroke-dasharray="5,4" opacity="0.85"/>
+
+  <!-- projection lines: vertical drop from bottom face to floor -->
+  <line x1="250" y1="248" x2="250" y2="320" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="330" y1="248" x2="330" y2="320" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="300" y1="268" x2="300" y2="340" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="220" y1="268" x2="220" y2="340" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <!-- Cube wireframe (Cabinet projection) -->
+  <g stroke="#38bdf8" fill="none" stroke-width="2.5" opacity="0.95">
+    <!-- bottom face (at z=120) -->
+    <polygon points="250,248 330,248 300,268 220,268" stroke-width="2" opacity="0.6"/>
+    <!-- top face (at z=200) -->
+    <polygon points="250,168 330,168 300,188 220,188"/>
+    <!-- vertical edges connecting bottom to top -->
+    <line x1="250" y1="248" x2="250" y2="168"/>
+    <line x1="330" y1="248" x2="330" y2="168"/>
+    <line x1="300" y1="268" x2="300" y2="188" opacity="0.6"/>
+    <line x1="220" y1="268" x2="220" y2="188" opacity="0.6"/>
+    <!-- hidden top-back edge (lighter) -->
+    <line x1="250" y1="168" x2="220" y2="188" opacity="0.35"/>
   </g>
 
-
-  <!-- ===== LEFT: Cube Projection on XY Plane ===== -->
-  <!-- Hitbox (red dashed square) -->
-  <rect x="200" y="130" width="160" height="160" rx="3" fill="none" stroke="#f87171" stroke-width="2"
-        stroke-dasharray="8,5" filter="url(#glow-hitbox)"/>
-
-  <!-- Cube XY projection (square) -->
-  <rect x="230" y="160" width="100" height="100" fill="none" stroke="#38bdf8" stroke-width="3" opacity="0.95"/>
   <!-- Cube label -->
-  <text x="280" y="310" text-anchor="middle" fill="#94a3b8" font-size="13" font-family="Segoe UI, sans-serif" font-weight="500">Cube</text>
+  <text x="275" y="100" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Segoe UI, sans-serif" font-weight="600">Cube</text>
 
 
-  <!-- ===== RIGHT: Tetrahedron Projection on XY Plane ===== -->
-  <!-- Hitbox (red dashed circle) -->
-  <circle cx="580" cy="210" r="85" fill="none" stroke="#f87171" stroke-width="2"
-          stroke-dasharray="8,5" filter="url(#glow-hitbox)"/>
+  <!-- ===================== TETRAHEDRON (right) ===================== -->
+  <!-- Base triangle at z=120, apex at z=200 -->
+  <!-- 3D: A(520,0,120) B(600,0,120) C(560,50,120)  D(560,25,200) -->
 
-  <!-- Tetrahedron XY projection (triangle) -->
-  <polygon points="520,270 640,270 580,150" fill="none" stroke="#34d399" stroke-width="3" opacity="0.95"/>
-  <!-- Tetrahedron centroid dot -->
-  <circle cx="580" cy="230" r="3" fill="#34d399" opacity="0.7"/>
-  <!-- Tetrahedron label -->
-  <text x="580" y="340" text-anchor="middle" fill="#94a3b8" font-size="13" font-family="Segoe UI, sans-serif" font-weight="500">Tetrahedron</text>
+  <!-- projection shadow on XY plane -->
+  <polygon points="520,320 600,320 560,340" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.8" stroke-dasharray="5,4" opacity="0.85"/>
 
+  <!-- projection lines -->
+  <line x1="520" y1="248" x2="520" y2="320" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="600" y1="248" x2="600" y2="320" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="560" y1="268" x2="560" y2="340" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
+  <line x1="545" y1="170" x2="545" y2="310" stroke="#34d399" stroke-width="1.8" stroke-dasharray="4,4" opacity="0.7"/>
 
-  <!-- ===== LEFT BOTTOM: Isometric XYZ Axes ===== -->
-  <g transform="translate(90, 350)">
-    <!-- Origin -->
-    <circle cx="0" cy="0" r="4" fill="#f1f5f9"/>
-
-    <!-- X axis (down-right) -->
-    <line x1="0" y1="0" x2="32" y2="18" stroke="#f87171" stroke-width="3" stroke-linecap="round"/>
-    <text x="40" y="28" fill="#f87171" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">X</text>
-
-    <!-- Y axis (up-right) -->
-    <line x1="0" y1="0" x2="32" y2="-18" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
-    <text x="40" y="-20" fill="#34d399" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">Y</text>
-
-    <!-- Z axis (up) -->
-    <line x1="0" y1="0" x2="0" y2="-38" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-    <text x="-5" y="-48" fill="#38bdf8" font-size="14" font-family="Segoe UI, sans-serif" font-weight="700">Z</text>
+  <!-- Tetrahedron wireframe -->
+  <g stroke="#a78bfa" fill="none" stroke-width="2.5" opacity="0.95">
+    <!-- base triangle (z=120) -->
+    <polygon points="520,248 600,248 560,268" stroke-width="2" opacity="0.7"/>
+    <!-- edges from apex to base -->
+    <line x1="545" y1="170" x2="520" y2="248"/>
+    <line x1="545" y1="170" x2="600" y2="248"/>
+    <line x1="545" y1="170" x2="560" y2="268"/>
+    <!-- hidden base edges (lighter) -->
+    <line x1="520" y1="248" x2="560" y2="268" opacity="0.4"/>
+    <line x1="600" y1="248" x2="560" y2="268" opacity="0.4"/>
   </g>
 
+  <!-- Tetrahedron label -->
+  <text x="560" y="100" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Segoe UI, sans-serif" font-weight="600">Tetrahedron</text>
 
-  <!-- ===== TOP LABEL ===== -->
-  <text x="400" y="50" text-anchor="middle" fill="#f1f5f9" font-size="14" font-family="Segoe UI, sans-serif" font-weight="600" letter-spacing="0.04em">PROJECTION ONTO XY PLANE</text>
+
+  <!-- ===================== XYZ AXES (left bottom) ===================== -->
+  <!-- Z up, X right, Y down-left -->
+  <g transform="translate(80, 350)">
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="3" fill="#f1f5f9"/>
+    <!-- Z axis (up) -->
+    <line x1="0" y1="0" x2="0" y2="-45" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="-4" y="-54" fill="#38bdf8" font-size="12" font-family="Segoe UI, sans-serif" font-weight="700">Z</text>
+    <!-- X axis (right) -->
+    <line x1="0" y1="0" x2="42" y2="0" stroke="#f87171" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="50" y="5" fill="#f87171" font-size="12" font-family="Segoe UI, sans-serif" font-weight="700">X</text>
+    <!-- Y axis (down-left) -->
+    <line x1="0" y1="0" x2="-28" y2="38" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="-40" y="50" fill="#34d399" font-size="12" font-family="Segoe UI, sans-serif" font-weight="700">Y</text>
+  </g>
 
 </svg>
